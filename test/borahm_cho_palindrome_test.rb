@@ -21,6 +21,10 @@ class BorahmChoPalindromeTest < Minitest::Test
     refute 12345.palindrome?
   end
 
+  def test_white_space_palindrome
+    refute " ".palindrome?
+  end
+
   def test_integer_palindrome
     assert 12321.palindrome?
   end

@@ -4,16 +4,20 @@ module BorahmChoPalindrome
 
     # Returns true for a palindrome, false otherwise.
     def palindrome?
-      processed_content == processed_content.reverse
+      if processed_content.empty?
+        false
+      else
+        processed_content == processed_content.reverse
+      end
     end
-  
+
+end
     private
   
       # Returns content for palindrome testing.
       def processed_content
-        to_s.scan(/[a-zA-Z\w]/i).join.downcase
+        to_s.scan(/[\w]/i).join.downcase
       end
-  end
   
   class String
     include BorahmChoPalindrome
@@ -22,3 +26,4 @@ module BorahmChoPalindrome
   class Integer
     include BorahmChoPalindrome
   end
+
